@@ -11,10 +11,13 @@ namespace BackendTaskStage2.Controllers
     [ApiController]
     public class OperationsController : ControllerBase
     {
+        public record RequestBodyModel(string operation_Type, int x, int y);
+
         [HttpPost]
-        public ActionResult<ResponseModel> PerformMathematicalOperation([Required] string operationType, [Required] int x, [Required] int y)
+        public ActionResult<ResponseModel> PerformMathematicalOperation([FromBody] RequestBodyModel bodyModel)
         {
-            var result = PerformOperation(operationType, x, y);
+            // var result = PerformOperation(operationType, x, y);
+            var result = PerformOperation(bodyModel.operation_Type, bodyModel.x, bodyModel.y);
             var response = new ResponseModel
             {
                 Result = result.Item2,

@@ -34,10 +34,10 @@ app.MapGet("/interninfo", () =>
 {
     var response = new UserDto
     {
-        SlackUserName = "Tsadhoq",
+        SlackUsername = "Tsadhoq",
         Backend = true,
         Age = 22,
-        Bio = "A fourth-year mechanical engineering student from the Federal University of Technology Minna"
+        Bio = "A fourth-year mechanical engineering student from the Federal University of Technology Minna."
     };
 
     return response; 

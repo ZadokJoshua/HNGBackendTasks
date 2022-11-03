@@ -2,16 +2,17 @@
 using BackendTaskStage2.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata.Ecma335;
 
 namespace BackendTaskStage2.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("operations")]
     [ApiController]
     public class OperationsController : ControllerBase
     {
         [HttpPost]
-        public IActionResult PerformMathematicalOperation(string operationType, int x, int y)
+        public ActionResult<ResponseModel> PerformMathematicalOperation([Required] string operationType, [Required] int x, [Required] int y)
         {
             var result = PerformOperation(operationType, x, y);
             var response = new ResponseModel
@@ -32,15 +33,15 @@ namespace BackendTaskStage2.Controllers
             {
                 switch (operationType)
                 {
-                    case OperationType.Addition:
+                    case OperationType.addition:
                         result = x + y;
                         break;
 
-                    case OperationType.Subtraction:
+                    case OperationType.subtraction:
                         result = x - y;
                         break;
 
-                    case OperationType.Multiplication:
+                    case OperationType.multiplication:
                         result = x * y;
                         break;
 

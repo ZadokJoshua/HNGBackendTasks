@@ -21,7 +21,7 @@ namespace BackendTaskStage2.Controllers
             var response = new ResponseModel
             {
                 Result = result.Item2,
-                Operation_Type = result.Item1
+                Operation_Type = bodyModel.operation_Type,
             };
 
             return Ok(response);

@@ -9,7 +9,7 @@ namespace BackendTaskStage2.Model
 
         public int Result { get; set; }
 
-        public string Operation_Type { get; set; } = String.Empty;
+        public string Operation_type { get; set; } = String.Empty;
 
         public ResponseModel()
         {

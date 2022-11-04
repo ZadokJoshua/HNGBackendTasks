@@ -21,7 +21,7 @@ namespace BackendTaskStage2.Controllers
             var response = new ResponseModel
             {
                 Result = result.Item2,
-                Operation_Type = bodyModel.operation_Type,
+                Operation_type = bodyModel.operation_Type.ToLower(),
             };
 
             return Ok(response);
@@ -32,7 +32,7 @@ namespace BackendTaskStage2.Controllers
             OperationType operationType;
             int result = 0;
 
-            if (Enum.TryParse(operation_Type, out operationType))
+            if (Enum.TryParse(operation_Type.ToLower(), out operationType))
             {
                 switch (operationType)
                 {

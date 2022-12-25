@@ -4,7 +4,7 @@ Request Body:
 ```
 {
   "operation_Type": "string",
-  "x": 0,
-  "y": 0
+  "x": int
+  "y": int
 }
 ```
